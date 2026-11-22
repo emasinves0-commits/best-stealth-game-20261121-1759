@@ -153,8 +153,7 @@ export function drawGuard(ctx, guard, level) {
   ctx.fillRect(-18, -h, 36, h);
   ctx.fillStyle = alert ? "#ff6e64" : "#e23d2e";
   ctx.fillRect(-18, -h, 36 * Math.min(1, guard.suspicion), h);
-  ctx.fillStyle = "rgba(255,255,255,0.85)";
-  ctx.font = "9px system-ui, sans-serif";
-  ctx.fillText("curiga " + guard.suspicion.toFixed(2), -14, -h - 4);
+  // HIDDEN: debug label "curiga X.XX" near the guard (fix-5 #2) - removed, only the
+  // meter strip on the staff remains, so no floating value is painted on the scene.
   ctx.restore();
 }
