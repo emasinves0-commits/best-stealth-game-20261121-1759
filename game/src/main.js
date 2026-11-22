@@ -224,7 +224,7 @@ function drawOverlay() {
     ctx.fillText("MENANG", w / 2, h / 2 - 60);
     ctx.fillStyle = "#c7d3e6";
     ctx.font = "20px system-ui, sans-serif";
-    ctx.fillText("Fokus. Diam. Lolos. Tekan SPACE untuk level berikutnya.", w / 2, h / 2 + 40);
+    ctx.fillText("Fokus. Diam. Lolos. Tekan SPACE / klik untuk ulang level.", w / 2, h / 2 + 40);
     return;
   }
   if (s === "play" && level && level.code) {
