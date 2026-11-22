@@ -50,20 +50,21 @@ export function drawHUD(ctx, state) {
 
   // ---------------------------------------------------------------- top-right
   panel(ctx, W - 312, 10, 300, 40);
-  // light / dark indicator
+  // light / dark indicator: placed left of the beam ring so the circular indicator
+  // and its label never overlap the rotation ring or its "sinar N°" text (fix-5 #3)
   const li = state.lightIndicator;
   ctx.fillStyle = lit ? "#ffd25a" : "#2a3346";
   ctx.beginPath();
-  ctx.arc(li.x, li.y, 7, 0, Math.PI * 2);
+  ctx.arc(W - 309, 26, 7, 0, Math.PI * 2);
   ctx.fill();
   ctx.strokeStyle = "rgba(255,255,255,0.8)";
   ctx.lineWidth = 1.5;
   ctx.stroke();
   ctx.fillStyle = lit ? "#ffd25a" : "#6a7488";
   ctx.font = "11px system-ui, sans-serif";
-  ctx.fillText(li.state, li.x + 12, li.y + 4);
+  ctx.fillText(li.state, W - 300, 30);
   // beam rotation direction indicator (the level jam)
-  beamRing(ctx, W - 240, 26, beamAngle, state.beamSpeedDeg);
+  beamRing(ctx, W - 230, 30, beamAngle, state.beamSpeedDeg);
 
   // ---------------------------------------------------------------- suspicion
   panel(ctx, 12, 56, W - 24, 160);
