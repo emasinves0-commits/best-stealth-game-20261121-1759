@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Last Light — Stealth</title>
+<style>
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #0b0e17; }
+  #game {
+    position: fixed; inset: 0; width: 1280px; height: 720px; display: block;
+    touch-action: none; cursor: none; image-rendering: auto;
+  }
+  .hint {
+    position: fixed; left: 14px; right: 14px; bottom: 14px;
+    color: #7fb0ff; font: 15px/1.5 system-ui, sans-serif;
+    pointer-events: none; text-shadow: 0 1px 4px #000a;
+  }
+</style>
+</head>
+<body>
+<canvas id="game" width="1280" height="720" aria-label="The Last Light: stealth game, top-down, keyboard + mouse"></canvas>
+<div id="hint" class="hint"></div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
